@@ -16,8 +16,47 @@ class ListViewHeartState extends State<ListViewHeart> {
     return Scaffold(
       appBar: new AppBar(
         title: Text('widget'),
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.list),
+              onPressed:_pushSaved
+          ),
+        ],
       ),
       body: _buildSuggestions(),
+    );
+  }
+
+  void _pushSaved() {
+    Navigator.of(context).push(
+      new MaterialPageRoute(
+          builder: (context){
+            final titles = _saved.map(
+                (pair){
+                  print(pair);
+                  return new ListTile(
+                    title: new Text(
+                      pair.asPascalCase,
+                      style: TextStyle(fontSize: 19.0),
+                    ),
+                  );
+                }
+            );
+            final divided = ListTile
+                .divideTiles(
+                context: context,
+                tiles: titles,
+            )
+            .toList();
+
+            return new Scaffold(
+              appBar:  new AppBar(
+                title: new Text('Saved suggestions'),
+              ),
+              body: new ListView(children:divided),
+            );
+          },
+      ),
     );
   }
 
@@ -44,6 +83,7 @@ class ListViewHeartState extends State<ListViewHeart> {
     final alreadySaved = _saved.contains(pair);
 
     return ListTile(
+
       title:new Text(
         pair.asPascalCase,
         style: TextStyle(fontSize: 10),
