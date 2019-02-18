@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'movie_list.dart';
 
 class MovieHome extends StatefulWidget {
   //  作用是什么
@@ -14,9 +15,9 @@ class MovieHome extends StatefulWidget {
 class MovieHomeState extends State<MovieHome> {
   int _selectedIndex = 1;
   final _widgetOptions = [
-    Text('Home'),
-    Text('Hot Movie'),
-    Text('Top 250'),
+    MovieList(mt:'Home'),
+    MovieList(mt:'Hot Movie'),
+    MovieList(mt:'Top 250'),
   ];
 
 
