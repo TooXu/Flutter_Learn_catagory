@@ -5,6 +5,7 @@ Dio dio = new Dio();
 class MovieApi {
 
   getMovieList(String mt, int page, int pageSize) async {
+    print(mt);
     String listUrl = 'https://tooxu.github.io/movie_homeList.json';
     var result = await dio.get(listUrl);
     return result.data;
