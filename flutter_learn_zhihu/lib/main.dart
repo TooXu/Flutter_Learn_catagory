@@ -8,14 +8,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Zhihu',
-
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Zhi hu'),
-          centerTitle: true,
-        ),
-        body: HomePage(),
+      theme: ThemeData(
+        primaryColor: Colors.blue,
       ),
+      home: HomePage(),
     );
   }
 }

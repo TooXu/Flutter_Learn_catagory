@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import '../myhome/myhome_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -58,8 +59,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-//      body: IndexedStack(),
+      body: IndexedStack(
+        children: <Widget>[
+          MyHomePage(),
+          Text('2'),
+          Text('3'),
+          Text('4'),
+          Text('5'),
+        ],
+        index: _tabIndex,
+      ),
       bottomNavigationBar: CupertinoTabBar(
+        activeColor: Colors.green,
+        
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: _getIcon(0), title: Text('home')),
           BottomNavigationBarItem(icon: _getIcon(1), title: Text('想法')),
