@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../myhome/myhome_page.dart';
 import 'package:flutter_learn_zhihu/idea/idea_page.dart';
+import '../campus/campus_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -64,7 +65,7 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           MyHomePage(),
           IdeaPage(),
-          Text('3'),
+          CampusPage(),
           Text('4'),
           Text('5'),
         ],
