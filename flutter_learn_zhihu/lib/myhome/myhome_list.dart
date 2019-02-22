@@ -22,13 +22,10 @@ class _MyHomeListViewState extends State<MyHomeListView> {
 //    print('responseJson = $dataArr');
 
     List<Recommend> modules = [];
-
     dataArr.forEach((data) {
-//      print(data);
       modules.add(Recommend.fromJson(data));
     });
 
-//    print('responsJson + $modules');
     setState(() {
       this.modules = modules;
       page = 1;
@@ -58,8 +55,9 @@ class _MyHomeListViewState extends State<MyHomeListView> {
         double offsetFromBottom = _scrollController.position.maxScrollExtent -
             _scrollController.position.pixels;
         if (offsetFromBottom < edge) {
-          _scrollController.animateTo(_scrollController.offset,
-              duration: Duration(milliseconds: 250), curve: Curves.easeOut);
+          _scrollController.animateTo(
+              _scrollController.offset - (edge - offsetFromBottom),
+              duration: Duration(milliseconds: 500), curve: Curves.easeOut);
         }
       }
       setState(() {
@@ -72,7 +70,6 @@ class _MyHomeListViewState extends State<MyHomeListView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     fetchData();
     _scrollController.addListener(() {
@@ -83,6 +80,14 @@ class _MyHomeListViewState extends State<MyHomeListView> {
         }
       }
     });
+  }
+
+  @override
+  void dispose() {
+    page = 1;
+    _scrollController.dispose();
+    print('dispose');
+    super.dispose();
   }
 
   Widget _buildProgressIndicator() {

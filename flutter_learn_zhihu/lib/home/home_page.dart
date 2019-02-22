@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../myhome/myhome_page.dart';
+import 'package:flutter_learn_zhihu/idea/idea_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -62,7 +63,7 @@ class _HomePageState extends State<HomePage> {
       body: IndexedStack(
         children: <Widget>[
           MyHomePage(),
-          Text('2'),
+          IdeaPage(),
           Text('3'),
           Text('4'),
           Text('5'),

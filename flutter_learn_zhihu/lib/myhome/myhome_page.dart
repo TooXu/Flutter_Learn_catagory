@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'myhome_list.dart';
+import 'hottopic_list.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -18,7 +19,9 @@ class _MyHomePageState extends State<MyHomePage>
   }
 
   final _quoteButton = FlatButton.icon(
-    onPressed: () {},
+    onPressed: () {
+      print('提问');
+    },
     icon: Icon(Icons.edit),
     label: Text('提问'),
   );
@@ -58,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage>
 
         bottom: TabBar(
             labelColor: Colors.black,
-            indicatorColor: Colors.black,
+            indicatorColor: Colors.red,
             controller: _tabController,
             tabs: <Widget>[
           Tab(
@@ -77,9 +80,9 @@ class _MyHomePageState extends State<MyHomePage>
       ),
       body: TabBarView(controller: _tabController, children: <Widget>[
         MyHomeListView(),
-        Container(),
-        Container(),
-        Container(),
+        MyHomeListView(),
+        HotTopicList(),
+        MyHomeListView(),
       ]),
     );
   }
