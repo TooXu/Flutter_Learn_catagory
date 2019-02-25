@@ -23,18 +23,24 @@ class _IdeaHeaderState extends State<IdeaHeader> {
             child: IdeaBanner(widget.topics),
           ),
           Container(
-            padding: EdgeInsets.only(left: 10,right: 10,top: 10),
+            padding: EdgeInsets.only(left: 10, right: 10, top: 10),
             child: Row(
               children: <Widget>[
                 Expanded(
                   child: FindCard(
-                    icon: Icon(Icons.add,color: Colors.red,),
+                    icon: Icon(
+                      Icons.add,
+                      color: Colors.red,
+                    ),
                     title: '热门更新了',
                   ),
                 ),
                 Expanded(
                   child: FindCard(
-                    icon: Icon(Icons.smoke_free,color: Colors.blue,),
+                    icon: Icon(
+                      Icons.smoke_free,
+                      color: Colors.blue,
+                    ),
                     title: '发现知友',
                   ),
                 ),
@@ -86,7 +92,8 @@ Widget Slider(BuildContext context, Topic data) {
             width: 100,
           ),
         ),
-        Column(
+        Flexible(
+            child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
@@ -111,7 +118,7 @@ Widget Slider(BuildContext context, Topic data) {
               ),
             )
           ],
-        )
+        )),
       ],
     )),
   );

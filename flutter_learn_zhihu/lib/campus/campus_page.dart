@@ -17,6 +17,13 @@ class _CampusPageState extends State<CampusPage>
     _tabController = TabController(length: 2, vsync: this, initialIndex: 0);
   }
 
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

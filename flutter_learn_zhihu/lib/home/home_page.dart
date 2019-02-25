@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import '../myhome/myhome_page.dart';
 import 'package:flutter_learn_zhihu/idea/idea_page.dart';
 import '../campus/campus_page.dart';
+import '../message/message_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -66,7 +67,7 @@ class _HomePageState extends State<HomePage> {
           MyHomePage(),
           IdeaPage(),
           CampusPage(),
-          Text('4'),
+          MessagePage(),
           Text('5'),
         ],
         index: _tabIndex,

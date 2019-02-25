@@ -13,7 +13,6 @@ class IdeaPage extends StatefulWidget {
 }
 
 class _IdeaPageState extends State<IdeaPage> {
-
   ScrollController scrollController = ScrollController();
 
   List<Topic> topics = [];
@@ -24,13 +23,10 @@ class _IdeaPageState extends State<IdeaPage> {
     super.initState();
     fetchData();
 
-    scrollController.addListener((){
+    scrollController.addListener(() {
       var offset = scrollController.offset;
-      if (offset < 0) {
-
-      }
+      if (offset < 0) {}
     });
-
   }
 
   Future<void> fetchData() async {
@@ -45,7 +41,7 @@ class _IdeaPageState extends State<IdeaPage> {
     });
 
     List<Idea> tempIdeas = [];
-    ideaJson.forEach((data){
+    ideaJson.forEach((data) {
       tempIdeas.add(Idea.fromJson(data));
     });
 
@@ -68,14 +64,16 @@ class _IdeaPageState extends State<IdeaPage> {
         ),
       ),
       body: RefreshIndicator(
-          child: ListView(
-            controller: scrollController,
-            children: <Widget>[
-              IdeaHeader(topics: this.topics),
-              IdeaList(ideas: this.ideas,),
-            ],
-          ),
-          onRefresh: fetchData,
+        child: ListView(
+          controller: scrollController,
+          children: <Widget>[
+            IdeaHeader(topics: this.topics),
+            IdeaList(
+              ideas: this.ideas,
+            ),
+          ],
+        ),
+        onRefresh: fetchData,
       ),
     );
   }

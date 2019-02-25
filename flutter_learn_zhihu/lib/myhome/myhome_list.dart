@@ -19,7 +19,6 @@ class _MyHomeListViewState extends State<MyHomeListView> {
   Future<void> fetchData() async {
     var responseJson = await request.getData('myhome_recommend');
     var dataArr = responseJson['data'];
-//    print('responseJson = $dataArr');
 
     List<Recommend> modules = [];
     dataArr.forEach((data) {
@@ -57,7 +56,8 @@ class _MyHomeListViewState extends State<MyHomeListView> {
         if (offsetFromBottom < edge) {
           _scrollController.animateTo(
               _scrollController.offset - (edge - offsetFromBottom),
-              duration: Duration(milliseconds: 500), curve: Curves.easeOut);
+              duration: Duration(milliseconds: 500),
+              curve: Curves.easeOut);
         }
       }
       setState(() {
