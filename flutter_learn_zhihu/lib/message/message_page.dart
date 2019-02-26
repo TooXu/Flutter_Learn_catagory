@@ -51,6 +51,7 @@ class _MessagePageState extends State<MessagePage> {
         ],
       ),
       body: ListView(
+        padding: EdgeInsets.symmetric(vertical: 10),
         children: <Widget>[
           MessageList(messages: messages),
         ],

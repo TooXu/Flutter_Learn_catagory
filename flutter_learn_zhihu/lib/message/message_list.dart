@@ -33,20 +33,20 @@ class MessageItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 10.0),
+      padding: EdgeInsets.symmetric(horizontal: 10,),
       child: Row(
         children: <Widget>[
-          Expanded(
-            flex: 2,
-            child: CircleAvatar(
-              child: Icon(Icons.favorite),
-            ),
+          CircleAvatar(
+            child: Icon(Icons.favorite),
+            radius: 22.0,
+          ),
+          SizedBox(
+            width: 10,
           ),
           Expanded(
-            flex: 8,
             child: Container(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+//                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
@@ -71,7 +71,10 @@ class MessageItem extends StatelessWidget {
                     height: vSpace,
                   ),
                   Text('xx天前'),
-                  Divider(),
+                  SizedBox(
+                    height: vSpace,
+                  ),
+//                  Divider(color: Colors.red,),
                 ],
               ),
             ),

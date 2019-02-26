@@ -4,6 +4,7 @@ import '../myhome/myhome_page.dart';
 import 'package:flutter_learn_zhihu/idea/idea_page.dart';
 import '../campus/campus_page.dart';
 import '../message/message_page.dart';
+import '../me/me_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -68,7 +69,7 @@ class _HomePageState extends State<HomePage> {
           IdeaPage(),
           CampusPage(),
           MessagePage(),
-          Text('5'),
+          MePage(),
         ],
         index: _tabIndex,
       ),
