@@ -1,7 +1,7 @@
 # flutter_learn_zhihu
 
 A new Flutter project.
-![shotcut](https://tooxu.github.io/assets/zhihu_flutter.jpeg)
+![shotcut](https://tooxu.github.io/assets/zhihu_flutter.jpeg){:height="50%" width="50%"}
 
 ## Getting Started
 
