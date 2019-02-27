@@ -1,7 +1,7 @@
 # flutter_learn_zhihu
 
 A new Flutter project.
-
+![shotcut-w200](https://tooxu.github.io/assets/zhihu_flutter.jpeg)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
