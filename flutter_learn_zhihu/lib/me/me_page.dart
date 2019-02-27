@@ -3,6 +3,8 @@ import '../me/me_cell.dart';
 import 'package:flutter/services.dart';
 import 'me_header.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import '../setting/setting_page.dart';
+import '../setting/web_page.dart';
 
 class MePage extends StatefulWidget {
   @override
@@ -111,14 +113,22 @@ class _MePageState extends State<MePage> {
             onPressed: () {},
           ),
           MeCell(
-            title: '社区建设',
-            icon: Icons.home,
-            onPressed: () {},
+            title: '设置',
+            icon: Icons.settings,
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return SettingPage();
+              }));
+            },
           ),
           MeCell(
-            title: '社区建设',
+            title: 'Github',
             icon: Icons.home,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return WebPage('https://github.com/tooxu');
+              }));
+            },
           ),
         ],
       ),
